@@ -1,0 +1,31 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {slovak}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {slovak}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\IeC {\'U}vod}{1}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Synt\IeC {\'e}za d\IeC {\'a}t}{3}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Zmena textu na re\IeC {\v c}}{3}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Prevod re\IeC {\v c}i na text}{4}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Rozpozn\IeC {\'a}vanie obsahu d\IeC {\'a}t}{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Generovanie obr\IeC {\'a}zkov}{5}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Teoretick\IeC {\'y} z\IeC {\'a}klad}{6}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Hudobn\IeC {\'e} d\IeC {\'a}ta}{6}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Neur\IeC {\'o}nov\IeC {\'e} siete}{7}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Variational Autoencoders}{9}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Generative Adversarial Networks}{9}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literat\IeC {\'u}ra}{11}{section*.7}

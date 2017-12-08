@@ -1,0 +1,14 @@
+[0] Config.pm:302> INFO - This is Biber 2.8
+[1] Config.pm:305> INFO - Logfile is 'thesis.blg'
+[101] biber-MSWIN32:313> INFO - === 
+[130] Biber.pm:361> INFO - Reading 'thesis.bcf'
+[275] Biber.pm:847> INFO - Found 15 citekeys in bib section 0
+[305] Biber.pm:3971> INFO - Processing section 0
+[327] Biber.pm:4144> INFO - Looking for bibtex format file 'chapters/bibliography.bib' for section 0
+[339] bibtex.pm:1449> INFO - Decoding LaTeX character macros into UTF-8
+[356] bibtex.pm:1305> INFO - Found BibTeX data source 'chapters/bibliography.bib'
+[538] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[539] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[540] Biber.pm:3799> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'sk-SK'
+[569] bbl.pm:613> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[581] bbl.pm:716> INFO - Output to thesis.bbl

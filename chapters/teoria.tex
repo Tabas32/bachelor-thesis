@@ -1,0 +1,111 @@
+\chapter{Teoretický základ}
+\label{teoreticky_zaklad}
+
+Ako už bolo avizované naša práca sa zaoberá neurónovými sieťami. Preto v tejto kapytole zhrnieme základné pojmi a problémi, pred ktorými stojíme.
+
+Algoritmus, ktorý sa učí z dát, poskituje dobé výsledky len vtedy ak má dobré dáta, z ktorých sa učí. 
+Náš model sa bude učiť z hudobných dát.
+Zvukové analógové sygnály uložené v digitálnej forme sú príliš rozsiahle nato aby sme ich mohli využiť ako vstup do neurónovej siete.
+Jedinou možnosťou je úprava takýchto dát na jednoduchšiu formu.
+
+\section{Hudobné dáta}
+Ľudia vnímajú hudbu na rôznych úrovňach.
+Rôzne vlastnosti harmonických zvukov vyvolávajú u nás rozličné emócie.
+Napríklad kým vzrušenie blízko súvisí s tempom, tak výška tónov a hlasitosť skôr určujú náladu skladby \cite{emotionExtraction}.
+To ako vnímame hudbu má preto veľký pliv na našu predstavivosť.
+
+Hudobné dáta sú ľahko dostupné na internete. Čo sa týka hudby existuje niekoľko zdrojov pre informácie \cite{musicMining}:
+\begin{itemize}
+	\item Hudobné metadáta,
+	\item Akustické vlastnosti,
+	\item Slová,
+	\item Hudobná kritika,
+	\item MIDI súbory,
+	\item Hudobné skóre.
+\end{itemize}
+Rôzne typy informácií majú využitie v rôznych prípadoch.
+Nás budú zaujímať akustické vlastnosti, medzi ktoré patrí energia, rytmus, časové a spektrálne vlastnosti \cite{emotionExtraction}.
+Pre každú z týchto sád vlastností existuje niekoľko vlastnosí, ktoré sa dajú extrahovať známimi algoritmami a programmi.
+V tabuľke 2.1 sme uviedli zopár významných údajov, ktoré by sme mohli využiť pre trénovanie naších modelov.
+Tieto údaje opisujú hudobnú informáciu a majú značne menšiu veľkosť ako skladba uložená vo formáte mp3 alebo wav.
+
+\begin{table}[]
+\centering
+\caption{Akustické vlastnosti zvukových sygnálov}
+\label{features_table}
+\begin{tabular}{l p{10cm}}
+\hline
+\textbf{Sada vlastností} & \textbf{Extrahovateľné vlastnosti}                                                                                                                                                                             \\ \hline
+Energia                  & Dynamická hlasitosť, výkon zvuku, celková hlasitosť, špecifické koeficienty citlivosti na hlasitosť                                                                  \\
+Rytmus                   & Diagram úderov, vzor rytmu, histogram rytmu a tempo, sila rytmu, pravidelnosť rytmu, jasnosť rytmu, priemerná frekvencia nástupu, priemerné tempo                  \\
+Časové vlastnosti        & Nulové priechody, logaritmus času útoku                                                                                                                                                                        \\
+Spektrálne vlastnosti    & Spektrálne centroidy, spektrálne vyhodnocovanie, spektrálny tok, spektrálne merania rovinnosti, spektrálne hrudkové faktory, mel-frekvenčné kepstrálne koeficienty \\
+Harmónia                 & Jasnosť kľúča, hudobný režim, harmonická zmena, diagram stúpania                                                                                                     \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Neurónové siete}
+Tak ako mozog, neurónová sieť je spojenie viacerých neurónov do siete.
+Neurón na vstupe príma informácie, ktoré pozmení a pošle na výstup, čo môže byť vstup ďalšieho neurónu.
+
+Formálny neurón alebo perceptrón (obrázok 2.1) má na vstupe \(n\) aktivít \cite{NNKvasnicka}.
+Označme vstup ako vektor \(x = (x_1, x_2, x_3, ... x_n)^T\), kde \(T\) označuje transponovaný vektor.
+
+\begin{figure}[!ht] 
+	\centering 
+	\includegraphics[width=.6\textwidth]{figures/perceptron} 
+	\caption{Model formálneho neurónu.} 
+\end{figure}
+
+Všetky vstupné kanály majú svoju váhu, označme preto váhy vstupov ako vektor \(w = (w_1, w_2, w_3, ... w_n)^T\).
+Celkový vstup perceptrónu sa potom vypočíta ako súčet súčinu vektorov \(x\) a \(w\), a prahu excitácie \(\Theta\).
+Pre získanie výstupu vstupy prejdú aktivačnou funkciou.
+Pre výstup \(y\) potom platí \[y = f(w^Tx + \Theta)\]
+
+Neuróny v sieťach sa spájajú do vrstiev. Nech je vrstva tvorená \(m\) neurónmi a každý neurón má \(n\) vstupných kanálov.
+Označme váhu j-teho vstupného kanála do i-teho neurónu ako \(w_{ij}\).
+Potom môžme vytvoriť váhovú maticu
+\[
+W = \begin{bmatrix}
+		w_{11} & w_{12} & \dots & w_{1n} \\
+		w_{21} & w_{22} & \dots & w_{2n} \\
+		{...}							\\
+		w_{m1} & w_{m2} & \dots & w_{mn}
+     \end{bmatrix}
+\]
+
+Výstup takejto vrstvy pomot bude \(y = (y_1, y_2, y_3, ... y_m)^T\), ktorý dostanem ako \[y = Wx\]
+Tento výstup potom slúži ako vstup do dalšej vrstvy, ktorej celkový počet vstupných kanálov je rovný \(m\).
+
+Po prechode celou sieťou sa vypočíta strata s ohľadom na požadovaný výstup.
+Trénovanie takéhoto modelu je potom minimalizačný problém kedy sa upravujú hodnoty váhových matíc a prahov aktivácie tak aby bola strata čo najmenšia.
+
+Neurónové siete sú výborné klasifikátory ale dajú sa použiť aj na generovanie nových dát.
+Existuje niekoľko druhov sietí, ktoré dokážu generovať obrázky.
+Pre nás zaujímavé budú VAE, CPPN a GAN neurónové siete. 
+
+\section{Variational Autoencoders}
+VAEs alebo variational autoencoders vznikli upravením neurónových sietí známych ako autoencoders \cite{VAE}.
+Tie fungujú na princípe hrdla. Ide vlastne o dve siete, kde jedna sieť zakóduje vstupnú informáciu na oveľa jednoduchší vektor a druhá sieť tento vektor dokáže rozkódovať opäť na pôvodnú informáciu.
+Takéto neurónové siete sa dajú využiť napríklad pri kompresií dát ale nedokážu generovať nové dáta.
+VAEs negenerujú vektor skutočných dát, VAEs generujú dva vektory.
+Vektor stredných hodnôt a vektor smerodajnej odchýlky.
+Tieto vektory sa potom spoja do jedného vektora, ktorý je vstupom do dekódera.
+Takto VAE dokážu generovať dáta, ktoré sú podobné ale predsa rozdielne od vstupných reálnych dát.
+Nevýhodou takýchto sietí je že ak sa použijú na generovanie obrázkov, tak generované obrázky sú rozmazané práve kvôli strate pri kompresií, ktorú VAEs vytvárajú.
+
+\section{Generative Adversarial Networks}
+GANs alebo generative adversarial networks, pôvodne navrhnuté Ianom Goodfellowom, fungujú na princípe konkurencie medzi dvoma sieťami \cite{GAN}.
+Prvá sieť, generátor, sa snaží generovať čo najrealistickejšie dáta zo šumu. Druhá sieť, diskriminátor,  rozpoznáva či sú vstupy reálne alebo vygenerované.
+Tieto siete sa tak snažia poraziť jedna druhú. GANs sú známe generovaním takmer realistických obrázkov.
+No nevýhodou je, že sa veľmi ťažko trénujú. Je viacero situácií, ktoré môžu nastať. Môže sa stať, že generátor nájde systém ako oklamať diskriminátor a generuje len jeden druh informácií.
+Alebo diskriminátor sa stane tak dobrým v rozpoznávaní skutočnosti, že vyhodnotí všetky generované dáta za neskutočné a tak sa generátor nebude môcť zlepšiť.
+
+GANs zaznamenali niekoľko vylepšení a využití v rôznych oblastiach. Pri generovaní obrázkov sa osvedčilo využitie konvolučných vrstiev \cite{DCGAN}.
+Takéto siete dokážu generovať oveľa kvalitnejšie obrázky aj keď stále nie vo veľkom rozlíšení.
+Ďalším vylepšením, práve v tomto probléme bolo využitie viacerých GAN sietí \cite{stackGAN}. Nakopenie viacerých neurónových sietí má za následok lepšiu kvalitu generovaných obrázkov.
+Niekoľko vrstiev dokáže zväčšiť obrázok s rozmermi 64x64 na rozmery 256x256 a výrazne upraviť kvalitu. A v neposlednom rade je aj výskum podmienených GANs.
+Tie vznikajú pridaním vlastností na vstup, pričom sa takto dá viac, či menej ovplyvniť výstup \cite{conGAN}.
+Práca z Univerzity v Michigane využíva práve podmienené GANs. V tejto práci využili neurónovú sieť na syntézu textu na obraz.
+Z datasetu vtáctva a kvetín vytvorili model, ktorý dokáže generovať obraz podľa popisu \cite{text2image}.
+S dostatočne veľkými zdrojmi by mohol mať tento prístup veľké využitie a mohol by zmeniť mnoho systémov. 
