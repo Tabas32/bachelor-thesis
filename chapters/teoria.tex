@@ -84,14 +84,33 @@ Neurónové siete sú výborné klasifikátory ale dajú sa použiť aj na gener
 Existuje niekoľko druhov sietí, ktoré dokážu generovať obrázky.
 Pre nás zaujímavé budú VAE, CPPN a GAN neurónové siete. 
 
-\section{Variational Autoencoders}
-VAEs alebo variational autoencoders vznikli upravením neurónových sietí známych ako autoencoders \cite{VAE}.
-Tie fungujú na princípe hrdla. Ide vlastne o dve siete, kde jedna sieť zakóduje vstupnú informáciu na oveľa jednoduchší vektor a druhá sieť tento vektor dokáže rozkódovať opäť na pôvodnú informáciu.
-Takéto neurónové siete sa dajú využiť napríklad pri kompresií dát ale nedokážu generovať nové dáta.
-VAEs negenerujú vektor skutočných dát, VAEs generujú dva vektory.
-Vektor stredných hodnôt a vektor smerodajnej odchýlky.
-Tieto vektory sa potom spoja do jedného vektora, ktorý je vstupom do dekódera.
-Takto VAE dokážu generovať dáta, ktoré sú podobné ale predsa rozdielne od vstupných reálnych dát.
+\section{Variačné autoenkódery}
+VAE alebo Variačné autoenkódery (variational autoencoders) vznikli upravením jednoduchých autoencóderov \cite{VAE}.
+Neurónová sieť postavená ako autoenkóder sa dokáže naučiť štruktúru vstupných dát.
+Pre jednoduché vysvetlenie majme na vstupe do siete obrázok.
+Obrazové dáta majú obrovské množstvo dimenzií vo forme pixelov.
+Autoenkóder dokáže uložiť štruktúru postavenia pixelov v obrázku do jednoduchých premenných nazvaných latentné premenné.
+Vektor tvorený z týchto premenných je komprimáciou obrázka a z tohto vektora môžeme dekódovaním dostať pôvodný obrázok.
+Ak by sme vedeli ako jednotlivé dimenzie latentného vektora ovplivňujú obrázok, mohli by sme meniť jeho vlastnosti jednoduchou zmenou premennej.
+Tento fakt sa dá využiť pri generovaný nových dát.
+
+V prvom rade pre všetky naše dáta \(X\) v datasete musí existovať nastavenie latentných premenných, ktoré umožňuje modelu generovať niečo veľmi podobné naším dátam.
+Majme vektor latentných premenných \(z\) v multidimenzionálnom priestore \(Z\), ktorý môžme ľahko vybrať podľa nejakej funkcie hustoty pravdepodobnosti \(P(z)\) definovanej nad \(Z\).
+Majme funkciu \(f(z, \theta)\) parametrizovanú vektorom \(\theta\) v priestore \(\Theta\), kde \(f: Z \times \Theta \rightarrow X\).
+Ak je \(z\) náhodné a \(\theta\) nemenné, potom \(f(z, \theta)\) je náhodná pemenná v priestore \(X\).
+My chceme optimalizovať \(\theta\) tak, že ak vyberieme vzorku z \(P(z)\), tak \(f(z, \theta)\) bude podobné naším dátam \(X\).
+
+VAE sieť musí zistiť akú informáciu nesie latentná premenná.
+VAE majú neobviklí prístup k tejto úlohe.
+Pri variačných autoenkódroch predpokladáme, že neexistuje jednoduchá interpretácia dimenzií \(z\).
+Namiesto toho sa vzorky \(z\) berú z Gaussovho normálneho rozdelenia.
+
+V praxi to vyzerá, tak že pri kódovaní dát na vektor \(z\) sa vytvárajú dva vektory, vektor stredných hodnôt a vektor smerodajnej odchýlky.
+Tieto vekory potom spoločne tvoria výsledný vektor \(z\).
+Podľa vektora stredných hodnôt sa vypočítava strata, ktorá hovorí či sú vygenerované dáta podobné chceným dátam.
+A podľa vektoru smerodajnej odchýlky sa vypočíta strata, ktorá meria ako blízko sú latentné premenné k normálnemu rozdeleniu.
+Celková strata je suma týchto čiastkových strát.
+
 Nevýhodou takýchto sietí je že ak sa použijú na generovanie obrázkov, tak generované obrázky sú rozmazané práve kvôli strate pri kompresií, ktorú VAEs vytvárajú.
 
 \section{Generative Adversarial Networks}
