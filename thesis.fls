@@ -239,6 +239,8 @@ INPUT chapters/analyza.aux
 INPUT chapters/analyza.aux
 INPUT chapters/teoria.aux
 INPUT chapters/teoria.aux
+INPUT chapters/tvorbaDatasetu.aux
+INPUT chapters/tvorbaDatasetu.aux
 OUTPUT thesis.aux
 INPUT c:/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT c:/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
@@ -327,6 +329,9 @@ INPUT c:/texlive/2017/texmf-dist/fonts/tfm/public/tex-gyre/ec-qplr.tfm
 INPUT figures/perceptron.png
 INPUT ./figures/perceptron.png
 INPUT ./figures/perceptron.png
+OUTPUT chapters/tvorbaDatasetu.aux
+INPUT chapters/tvorbaDatasetu.tex
+INPUT chapters/tvorbaDatasetu.tex
 INPUT c:/texlive/2017/texmf-dist/fonts/tfm/public/tex-gyre/ec-qplr-sc.tfm
 INPUT thesis.aux
 INPUT chapters/uvod.aux
@@ -335,6 +340,8 @@ INPUT chapters/analyza.aux
 INPUT chapters/analyza.aux
 INPUT chapters/teoria.aux
 INPUT chapters/teoria.aux
+INPUT chapters/tvorbaDatasetu.aux
+INPUT chapters/tvorbaDatasetu.aux
 INPUT ./thesis.out
 INPUT ./thesis.out
 INPUT thesis.run.xml

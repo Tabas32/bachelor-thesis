@@ -1,0 +1,47 @@
+% !TEX root = ../thesis.tex
+
+\chapter{Tvorba datasetu}
+\label{tvorba_datasetu}
+
+Najdôležitejšou časťou pri vytváraní nášho systému je tvorba datasetu.
+Podľa toho aké dobré dáta zozbierame, také výsledky sa nám podarí získať.
+Náš dataset bude tvorený dvomi druhmi dát, a to obrazovými a zvukovými.
+
+\section{Zvukové dáta}
+V predošlej kapitole sme vysvetlili prečo a ako je potrebné upraviť hudobné dáta, z ktorých sa bude náš model učiť.
+V tejto podkapitole opíšeme ako bude vyzerať zvuková časť nášho datasetu.
+
+Prvým krokom je výber žánru skladieb, ktoré budeme zbierať.
+V súčasnosti existuje nesmierne množstvo interpretov a skladieb z ktorých si môžeme vybrať.
+No nie každý hudobný žáner dokáže podnietiť našu predstavivosť.
+Pre náš projekt budú najvhodnejšie skladby klasickej hudby, nakoľko na rozdiel od populárnej modernej hudby, klasická hudba dáva väčší dôraz na emócie.
+
+Vzorky datasetu by mali mať konštantnú veľkosť.
+Preto je nevyhnutné upraviť skladby tak aby tomu vyhovovali.
+
+V závislosti od dĺžky a rôznorodosti jednotlivých skladieb vyberieme z každej niekoľko vzoriek s dĺžkou 25 sekúnd.
+Táto dĺžka je zvolená preto aby mal poslucháč dostatok času na vybavenie obrazu.
+Pomocou programu Audacity ďalej upravíme každú vzorku pomocou efektu Normalizovať.
+Takto dosiahneme podobnú hlasitosť, bez ohľadu na spôsob nahrávania daných vzoriek.
+Taktiež zmeníme vzorkovaciu frekvenciu na 22 050Hz, aby naša analýza bola súvislá.
+
+Pre hlavnú analýzu vytvoríme skript v programovacom jazyku Python.
+Tento jazyk sme vybrali kvôli možstvu modulov, ktoré existujú a pomôžu nám pri tvorbe systému.
+Pre hudobnú analýzu použijeme modul Librosa, ktorý obsahuje množstvo algoritmov vhodných pre získanie vlastností akustických signálov, ktoré sme uviedli v predošlej kapitole.
+
+Vybrali sme päť akustických vlastností, ktoré budú reprezentovať naše skladby, a to mel-frekvenčné kepstrálne koeficienty, tempo, spektrálne centroidy, počet nulových priechodov a mieru týchto priechodov.
+Každá z týchto vlastností nesie užitočnú informáciu potrebnú pre našu úlohu.
+Napríklad mel-frekvenčné kepstrálne koeficienty poskytujú informáciu o tom aký tón a farbu má skladba v danom časovom úseku.
+
+Touto analýzou sme úspešne skrátili vstupný vektor.
+Ak by sme chceli vložiť 25 sekundové vzorky skladieb do neurónovej siete potrebovali by sme viac ako 500 000 vstupných kanálov.
+Náš dataset obsahuje pre každú vzorku približne 700 reálnych hodnôt.
+
+\section{Obrazové dáta}
+Tak ako hudobné dáta tak aj obrázky, ktoré bude náš dataset obsahovať musia mať nejakú koherentnú formu.
+
+Prvým modelom, ktorý budeme vytvárať bude neurónová sieť, ktorá dokáže priradiť k skladbe farbu.
+Pre tento klasifikátor ako výstup použijeme jedno číslo, ktoré bude reprezentovať farbu v našej farebnej palete.
+Takto sme sa rozhodli z dôvodu, že pri vytváraní datasetu bude jednoduchšie ak k jednotlivým skladbám priradíme farbu z vopred danej palety.
+
+Pre druhý a náš hlavný model, budeme ukladať obrázky vo formáte png a každý obrázok bude uložený vo veľkosti 32x32 pixlov.
