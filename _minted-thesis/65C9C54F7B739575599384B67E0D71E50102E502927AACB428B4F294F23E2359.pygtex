@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{prediction} \PYG{o}{=} \PYG{n}{neural\PYGZus{}network\PYGZus{}model}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{cost} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{softmax\PYGZus{}cross\PYGZus{}entropy\PYGZus{}with\PYGZus{}logits}\PYG{p}{(}
+			\PYG{n}{logits}\PYG{o}{=}\PYG{n}{prediction}\PYG{p}{,}
+			\PYG{n}{labels}\PYG{o}{=}\PYG{n}{y}\PYG{p}{))}
+\end{Verbatim}

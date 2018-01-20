@@ -48,32 +48,9 @@ Pre druhý a náš hlavný model, budeme ukladať obrázky vo formáte png a ka�
 
 \section{Zber dát}
 V tejto časti opíšeme spôsob ako sme zbierali dáta pre náš dataset.
-Zber údajov je veľmi podstatná časť projektu.
-Preto je nevyhnutné nebrať tento proces na ľahkú váhu.
-Vytváranie vlastností (features) a štítkov (labels) môže byť úplne manuálne alebo z časti automatizované.
-Zber dát manuálne môže byť veľmi pracný a zdĺhavý, preto je vhodné mať nejaký nástroj pre túto činnosť.
-Tento nástroj by nás oslobodil od množstva repetitívnej práce.
-Ďalšou výhodou pre vytváranie datasetu na jednom mieste je zapojenie viacerých ľudí do procesu.
-Viac ľudí prináša variabilitu do našich dát a umožňuje vytvorenie robustnejšieho riešenia.
-
-Z týchto dôvodov sme vytvorili webovú aplikáciu, ktorá slúži na zber údajov.
-V našom datasete sú okrem akustických vlastností skladieb, ktoré dokážeme získať relatívne jednoducho, aj údaje, ktoré nedokážeme získať pomocou algoritmov.
-Presne pre získanie týchto dát sme vytvorili formulár určený na ich ukladanie.
-Konkrétne ide o farbu skladby, emóciu a obrázok, toho čo skladba predstavuje.
-Farbu je možné vybrať z palety pätnástich základných farieb.
-Pre emóciu možno vybrať jednu z piatich skupín emócií.
-Jednotlivé skupiny možno opísať ako vášnivé emócie, veselé, dojímavé, vtipné a agresívne.
-Najdôležitejšou informáciou, ktorú potrebujeme získať je ale obrázok.
-Do nášho datasetu potrebujeme dva druhy obrázkov, a to jednoduchú skicu a detailný obrázok.
-Pre jednouché stvárnenie skladby v podobe skice sme do formuláru pridali editor na nakreslenie obrázku.
-Kvôli jednoduchosti je možné požiť len čiernu farbu.
-V datasete potrebujeme obrázky o veľkosti 32x32, lenže kreslenie takýchto obrázkov by bolo nepraktické.
-Preto sme plátnu na kreslenie dali veľkosť 320x320 a zväčšili sme hrúbku štetca.
-Takto budeme môcť kresliť pohodlne a zároveň potom zmenšiť obrázky bez prílišnej straty.
-Druhý typ obrázku získavame pomocou url adresy.
-Detailnejšie obrázky vyhľadáme na internete a pomocou nášho nástroja uložíme adresu.
-Databáza takto nebude musieť ukladať surové dáta a my budeme môcť obrázok jednoducho vyhľadať a stiahnuť.
-Keďže naša aplikácia verejne dostupná, pribudla nám nová úloha, a to kontrola.
-Skôr ako budeme môcť využiť nazbierané dáta, musíme ich skontrolovať či neobsahujú nevhodný obsah a či sú vierohodné.
-
-Pomocou tejto webovej aplikácie sme zozbierali potrebné údaje, ktoré je nutné už len stiahnuť a jednoducho upraviť pre vstup do modelov neurónových sietí.
+Zber údajov je veľmi podstantná časť projektu.
+Preto je nevihnutné nebrať tento proces na ľahkú váhu.
+Vytváranie vlastnotí (features) a štítkov (labels) môže byť úplne manuálne alebo z časti automatizované.
+Zber dát manuálne môže byť veľmi pracní a zdĺhavý, preto je vhodné mať neaký nástroj pre túto činnosť.
+Ďalšou výhodou pre vytváranie datasetu na jednom mieste je zaponie viacerích ľudí do procesu.
+Viac ľudí prináša variabitlitu do našich dát a umožňuje vytvrenie robustnejšieho riešenia.

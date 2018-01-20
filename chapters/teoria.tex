@@ -26,7 +26,7 @@ Hudobné dáta sú ľahko dostupné na internete. Čo sa týka hudby existuje ni
 Rôzne typy informácií majú využitie v rôznych prípadoch.
 Nás budú zaujímať akustické vlastnosti, medzi ktoré patrí energia, rytmus, časové a spektrálne vlastnosti \cite{emotionExtraction}.
 Pre každú z týchto sád vlastností existuje niekoľko vlastností, ktoré sa dajú extrahovať známymi algoritmami a programami.
-V tabuľke 2.1 sme uviedli zopár významných údajov, ktoré by sme mohli využiť pre trénovanie našich modelov.
+V tabuľke \ref{features_table} sme uviedli zopár významných údajov, ktoré by sme mohli využiť pre trénovanie našich modelov.
 Tieto údaje opisujú hudobnú informáciu a majú značne menšiu veľkosť ako skladba uložená vo formáte mp3 alebo wav.
 
 \begin{table}[]
@@ -48,13 +48,14 @@ Harmónia                 & Jasnosť kľúča, hudobný režim, harmonická zmen
 Tak ako mozog, neurónová sieť je spojenie viacerých neurónov do siete.
 Neurón na vstupe príma informácie, ktoré pozmení a pošle na výstup, čo môže byť vstup ďalšieho neurónu.
 
-Formálny neurón alebo perceptrón (obrázok 2.1) má na vstupe \(n\) aktivít \cite{NNKvasnicka}.
+Formálny neurón alebo perceptrón (obrázok \ref{formal_neuron}) má na vstupe \(n\) aktivít \cite{NNKvasnicka}.
 Označme vstup ako vektor \(x = (x_1, x_2, x_3, ... x_n)^T\), kde \(T\) označuje transponovaný vektor.
 
 \begin{figure}[!ht] 
 	\centering 
 	\includegraphics[width=.6\textwidth]{figures/perceptron} 
 	\caption{Model formálneho neurónu.} 
+	\label{formal_neuron}
 \end{figure}
 
 Všetky vstupné kanály majú svoju váhu, označme preto váhy vstupov ako vektor \(w = (w_1, w_2, w_3, ... w_n)^T\).
