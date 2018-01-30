@@ -34,8 +34,25 @@ Každá z týchto vlastností nesie užitočnú informáciu potrebnú pre našu 
 Napríklad mel-frekvenčné kepstrálne koeficienty poskytujú informáciu o tom aký tón a farbu má skladba v danom časovom úseku.
 
 Touto analýzou sme úspešne skrátili vstupný vektor.
-Ak by sme chceli vložiť 25 sekundové vzorky skladieb do neurónovej siete potrebovali by sme viac ako 500 000 vstupných kanálov.
-Náš dataset obsahuje pre každú vzorku približne 700 reálnych hodnôt.
+Ak by sme chceli vložiť 25 sekundové vzorky skladieb do neurónovej siete celkový počet vstupných kanálov by bol \( 25 \times 22050 = 551250\).
+Náš dataset obsahuje pre každú vzorku 549 hodnôt z oboru reálnych čísel.
+Mel-frekvenčné kepstrálne koeficienty tvoria najväčšiu časť.
+\begin{minted}{python}
+S = librosa.feature.melspectrogram(
+	y=y, sr=sr, n_mels=128, hop_length=22050, n_fft=22050)
+log_S = librosa.logamplitude(S, ref_power=np.max)
+mfcc = librosa.feature.mfcc(S=log_S, sr=sr, n_mfcc=20)
+mfcc_1d_vector = mfcc.flatten()
+\end{minted}
+Tie sú vypočítané na základe mel-spektrogramu so vzorkovaním 22050, čo vytvára 26 hodnôt.
+Počet mfcc je 20, celkovo tak dostávame \( 20 \times 26 = 520\) čísel.
+Tempo, aritmetický priemer spektrálnych centroidov a celkový počet nulových priechodov sú ďalšie 3 hodnoty datasetu.
+Posledných 26 hodnôt tvoria miery nulových prechodov, merané so skokom 22050.
+\begin{minted}{python}
+zcr = librosa.feature.zero_crossing_rate(
+	y, frame_length=22050, hop_length=22050).flatten()
+\end{minted}
+
 
 \section{Obrazové dáta}
 Tak ako hudobné dáta tak aj obrázky, ktoré bude náš dataset obsahovať musia mať nejakú koherentnú formu.

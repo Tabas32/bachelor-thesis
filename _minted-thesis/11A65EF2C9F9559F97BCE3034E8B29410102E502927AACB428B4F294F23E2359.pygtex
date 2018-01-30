@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{S} \PYG{o}{=} \PYG{n}{librosa}\PYG{o}{.}\PYG{n}{feature}\PYG{o}{.}\PYG{n}{melspectrogram}\PYG{p}{(}
+	\PYG{n}{y}\PYG{o}{=}\PYG{n}{y}\PYG{p}{,} \PYG{n}{sr}\PYG{o}{=}\PYG{n}{sr}\PYG{p}{,} \PYG{n}{n\PYGZus{}mels}\PYG{o}{=}\PYG{l+m+mi}{128}\PYG{p}{,} \PYG{n}{hop\PYGZus{}length}\PYG{o}{=}\PYG{l+m+mi}{22050}\PYG{p}{,} \PYG{n}{n\PYGZus{}fft}\PYG{o}{=}\PYG{l+m+mi}{22050}\PYG{p}{)}
+\PYG{n}{log\PYGZus{}S} \PYG{o}{=} \PYG{n}{librosa}\PYG{o}{.}\PYG{n}{logamplitude}\PYG{p}{(}\PYG{n}{S}\PYG{p}{,} \PYG{n}{ref\PYGZus{}power}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{)}
+\PYG{n}{mfcc} \PYG{o}{=} \PYG{n}{librosa}\PYG{o}{.}\PYG{n}{feature}\PYG{o}{.}\PYG{n}{mfcc}\PYG{p}{(}\PYG{n}{S}\PYG{o}{=}\PYG{n}{log\PYGZus{}S}\PYG{p}{,} \PYG{n}{sr}\PYG{o}{=}\PYG{n}{sr}\PYG{p}{,} \PYG{n}{n\PYGZus{}mfcc}\PYG{o}{=}\PYG{l+m+mi}{20}\PYG{p}{)}
+\PYG{n}{mfcc\PYGZus{}1d\PYGZus{}vector} \PYG{o}{=} \PYG{n}{mfcc}\PYG{o}{.}\PYG{n}{flatten}\PYG{p}{()}
+\end{Verbatim}

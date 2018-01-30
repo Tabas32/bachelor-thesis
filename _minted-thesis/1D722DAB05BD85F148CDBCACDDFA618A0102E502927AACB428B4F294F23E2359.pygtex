@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{zcr} \PYG{o}{=} \PYG{n}{librosa}\PYG{o}{.}\PYG{n}{feature}\PYG{o}{.}\PYG{n}{zero\PYGZus{}crossing\PYGZus{}rate}\PYG{p}{(}
+	\PYG{n}{y}\PYG{p}{,} \PYG{n}{frame\PYGZus{}length}\PYG{o}{=}\PYG{l+m+mi}{22050}\PYG{p}{,} \PYG{n}{hop\PYGZus{}length}\PYG{o}{=}\PYG{l+m+mi}{22050}\PYG{p}{)}\PYG{o}{.}\PYG{n}{flatten}\PYG{p}{()}
+\end{Verbatim}

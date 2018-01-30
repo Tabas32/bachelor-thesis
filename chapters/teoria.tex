@@ -46,7 +46,7 @@ Harmónia                 & Jasnosť kľúča, hudobný režim, harmonická zmen
 
 \section{Neurónové siete}
 Tak ako mozog, neurónová sieť je spojenie viacerých neurónov do siete.
-Neurón na vstupe príma informácie, ktoré pozmení a pošle na výstup, čo môže byť vstup ďalšieho neurónu.
+Neurón na vstupe príjma informácie, ktoré pozmení a pošle na výstup, čo môže byť vstup ďalšieho neurónu.
 
 Formálny neurón alebo perceptrón (obrázok \ref{formal_neuron}) má na vstupe \(n\) aktivít \cite{NNKvasnicka}.
 Označme vstup ako vektor \(x = (x_1, x_2, x_3, ... x_n)^T\), kde \(T\) označuje transponovaný vektor.
@@ -86,11 +86,11 @@ Existuje niekoľko druhov sietí, ktoré dokážu generovať obrázky.
 Pre nás zaujímavé budú VAE, CPPN a GAN neurónové siete. 
 
 \section{Variačné autoenkódery}
-VAE alebo Variačné autoenkódery (variational autoencoders) vznikli upravením jednoduchých autoenkóderov \cite{VAE}.
+VAE alebo Variačné autoenkódery (angl. Variational autoencoders) vznikli upravením jednoduchých autoenkóderov \cite{VAE}.
 Neurónová sieť postavená ako autoenkóder sa dokáže naučiť štruktúru vstupných dát.
-Pre jednoduché vysvetlenie majme na vstupe do siete obrázok.
-Obrazové dáta majú obrovské množstvo dimenzií vo forme pixlov.
-Autoenkóder dokáže uložiť štruktúru postavenia pixlov v obrázku do jednoduchých premenných nazvaných latentné premenné.
+Pre jednoduché vysvetlenie majme na vstupe do siete rastrový obrázok.
+Obrazové dáta sú uložené vo forme pixlov, ktorých množstvo závisí od rozmerov obrázka.
+Autoenkóder dokáže uložiť štruktúru umiestnenia pixlov v obrázku, čiže jeho obsah do jednoduchých premenných nazvaných latentné premenné.
 Vektor tvorený z týchto premenných je komprimáciou obrázka a z tohto vektora môžeme dekódovaním dostať pôvodný obrázok.
 Ak by sme vedeli ako jednotlivé dimenzie latentného vektora ovplyvňujú obrázok, mohli by sme meniť jeho vlastnosti jednoduchou zmenou premennej.
 Tento fakt sa dá využiť pri generovaný nových dát.
@@ -115,7 +115,7 @@ Celková strata je suma týchto čiastkových strát.
 Nevýhodou takýchto sietí je že ak sa použijú na generovanie obrázkov, tak generované obrázky sú rozmazané práve kvôli strate pri kompresií, ktorú VAE vytvárajú.
 
 \section{Generatívne konkurenčné siete}
-Generačné konkurenčné siete alebo GAN, pre generative adversarial networks, pôvodne navrhnuté Ianom Goodfellowom, fungujú na princípe konkurencie medzi dvoma sieťami \cite{GAN}.
+Generačné konkurenčné siete alebo GAN (angl. Generative adversarial networks) pôvodne navrhnuté Ianom Goodfellowom, fungujú na princípe konkurencie medzi dvoma sieťami \cite{GAN}.
 Prvá sieť, generátor, sa snaží generovať čo najrealistickejšie dáta zo šumu.
 Druhá sieť, diskriminátor,  rozpoznáva či sú vstupy reálne alebo vygenerované.
 Tieto siete sa tak snažia poraziť jedna druhú.

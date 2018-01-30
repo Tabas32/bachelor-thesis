@@ -36,12 +36,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Obrazov\IeC {\'e} d\IeC {\'a}ta}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Zber d\IeC {\'a}t}{13}{section.4.3}
+\contentsline {section}{\numberline {4.3}Zber d\IeC {\'a}t}{14}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Detekcia farby}{15}{chapter.5}
+\contentsline {chapter}{\numberline {5}Detekcia farby}{16}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}N\IeC {\'a}vrh}{15}{section.5.1}
+\contentsline {section}{\numberline {5.1}N\IeC {\'a}vrh}{16}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Implement\IeC {\'a}cia}{16}{section.5.2}
+\contentsline {section}{\numberline {5.2}Implement\IeC {\'a}cia}{17}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literat\IeC {\'u}ra}{18}{section*.8}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{19}{section*.8}
