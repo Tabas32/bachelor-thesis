@@ -44,4 +44,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Implement\IeC {\'a}cia}{17}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literat\IeC {\'u}ra}{19}{section*.8}
+\contentsline {chapter}{\numberline {6}GAN Vizualiz\IeC {\'a}tor}{19}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}N\IeC {\'a}vrh}{19}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Implement\IeC {\'a}cia}{20}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Podmienen\IeC {\'a} generat\IeC {\'\i }vna sie\IeC {\v t}}{22}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Zmena parametrov}{22}{section.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}ovanie obr\IeC {\'a}zkov}{23}{section.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literat\IeC {\'u}ra}{25}{section*.10}

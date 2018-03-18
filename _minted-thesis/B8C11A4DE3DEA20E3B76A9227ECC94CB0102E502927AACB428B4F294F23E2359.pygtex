@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{img} \PYG{o}{=} \PYG{n}{Image}\PYG{o}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{image\PYGZus{}name}\PYG{p}{)}
+\PYG{n}{white\PYGZus{}back} \PYG{o}{=} \PYG{n}{Image}\PYG{o}{.}\PYG{n}{new}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}RGB\PYGZsq{}}\PYG{p}{,} \PYG{n}{img}\PYG{o}{.}\PYG{n}{size}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{l+m+mi}{255}\PYG{p}{))}
+\PYG{n}{white\PYGZus{}back}\PYG{o}{.}\PYG{n}{paste}\PYG{p}{(}\PYG{n}{img}\PYG{p}{,} \PYG{n}{mask} \PYG{o}{=} \PYG{n}{img}\PYG{o}{.}\PYG{n}{split}\PYG{p}{()[}\PYG{l+m+mi}{3}\PYG{p}{])}
+
+\PYG{n}{gray} \PYG{o}{=} \PYG{n}{white\PYGZus{}back}\PYG{o}{.}\PYG{n}{convert}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{small} \PYG{o}{=} \PYG{n}{gray}\PYG{o}{.}\PYG{n}{resize}\PYG{p}{((}\PYG{n}{HEIGHT}\PYG{p}{,} \PYG{n}{WIDTH}\PYG{p}{))}
+\PYG{n}{arr} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{small}\PYG{p}{)}
+\PYG{n}{flat\PYGZus{}arr} \PYG{o}{=} \PYG{n}{arr}\PYG{o}{.}\PYG{n}{ravel}\PYG{p}{()}
+\PYG{k}{return} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{n}{flat\PYGZus{}arr}\PYG{p}{)}
+\end{Verbatim}

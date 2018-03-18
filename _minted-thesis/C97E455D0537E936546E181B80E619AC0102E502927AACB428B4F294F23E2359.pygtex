@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{D\PYGZus{}loss} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{D\PYGZus{}real}\PYG{p}{)} \PYG{o}{+} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mf}{1.} \PYG{o}{\PYGZhy{}} \PYG{n}{D\PYGZus{}fake}\PYG{p}{))}
+\PYG{n}{G\PYGZus{}loss} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{D\PYGZus{}fake}\PYG{p}{))}
+
+\PYG{n}{D\PYGZus{}solver} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{train}\PYG{o}{.}\PYG{n}{AdamOptimizer}\PYG{p}{()}\PYG{o}{.}\PYG{n}{minimize}\PYG{p}{(}\PYG{n}{D\PYGZus{}loss}\PYG{p}{,} \PYG{n}{var\PYGZus{}list}\PYG{o}{=}\PYG{n}{theta\PYGZus{}D}\PYG{p}{)}
+\PYG{n}{G\PYGZus{}solver} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{train}\PYG{o}{.}\PYG{n}{AdamOptimizer}\PYG{p}{()}\PYG{o}{.}\PYG{n}{minimize}\PYG{p}{(}\PYG{n}{G\PYGZus{}loss}\PYG{p}{,} \PYG{n}{var\PYGZus{}list}\PYG{o}{=}\PYG{n}{theta\PYGZus{}G}\PYG{p}{)}
+\end{Verbatim}

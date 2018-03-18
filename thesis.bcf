@@ -1941,6 +1941,7 @@
     <bcf:citekey order="16">stackGAN</bcf:citekey>
     <bcf:citekey order="17">conGAN</bcf:citekey>
     <bcf:citekey order="18">text2image</bcf:citekey>
+    <bcf:citekey order="19">GAN</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
