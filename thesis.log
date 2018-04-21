@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.17)  18 MAR 2018 20:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.17)  21 APR 2018 19:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1427,7 +1427,7 @@ runsystem(del thesis.aex)...executed.
 
 (./thesis.aux (./chapters/uvod.aux) (./chapters/formulacia.aux)
 (./chapters/analyza.aux) (./chapters/teoria.aux) (./chapters/tvorbaDatasetu.aux
-) (./chapters/farba.aux) (./chapters/gan.aux))
+) (./chapters/farba.aux) (./chapters/gan.aux) (./chapters/vae.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
@@ -1662,7 +1662,7 @@ Underfull \hbox (badness 1077) in paragraph at lines 43--43
 []\T1/qpl/m/n/12 Jasnos´ k©ú£a, hu-dobný re-ºim, har-mo-nická zmena,
  []
 
-<figures/perceptron.png, id=252, 449.42906pt x 213.79875pt>
+<figures/perceptron.png, id=267, 449.42906pt x 213.79875pt>
 File: figures/perceptron.png Graphic file (type png)
 <use figures/perceptron.png>
 Package pdftex.def Info: figures/perceptron.png  used on input line 56. on inpu
@@ -1694,7 +1694,7 @@ Kapitola 4.
 
  (./chapters/farba.tex
 Kapitola 5.
-<figures/relu.png, id=306, 803.0pt x 803.0pt>
+<figures/relu.png, id=321, 803.0pt x 803.0pt>
 File: figures/relu.png Graphic file (type png)
 <use figures/relu.png>
 Package pdftex.def Info: figures/relu.png  used on input line 22. on input line
@@ -1749,7 +1749,7 @@ File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 
 (./_minted-thesis/C97E455D0537E936546E181B80E619AC0102E502927AACB428B4F294F23E2
 359.pygtex) [21]
-<figures/g_loss_1.png, id=341, 662.475pt x 291.33844pt>
+<figures/g_loss_1.png, id=356, 662.475pt x 291.33844pt>
 File: figures/g_loss_1.png Graphic file (type png)
 <use figures/g_loss_1.png>
 Package pdftex.def Info: figures/g_loss_1.png  used on input line 117. on input
@@ -1757,7 +1757,7 @@ Package pdftex.def Info: figures/g_loss_1.png  used on input line 117. on input
 Package pdftex.def Info: Requested size: 341.43436pt x 150.15433pt on input lin
 e 117.
  [22] [23 <./figures/g_loss_1.png>]
-<figures/cppn.png, id=351, 1005.7575pt x 481.8pt>
+<figures/cppn.png, id=366, 1005.7575pt x 481.8pt>
 File: figures/cppn.png Graphic file (type png)
 <use figures/cppn.png>
 Package pdftex.def Info: figures/cppn.png  used on input line 150. on input lin
@@ -1765,21 +1765,50 @@ e 150.
 Package pdftex.def Info: Requested size: 341.43436pt x 163.55986pt on input lin
 e 150.
 ) [24 <./figures/cppn.png>]
+\openout2 = `chapters/vae.aux'.
+
+
+(./chapters/vae.tex
+Kapitola 7.
 [25
+
+
+
+]
+\openout7 = `thesis.pyg'.
+
+
+(./_minted-thesis/16083857060085409EECD476B070F6DD0102E502927AACB428B4F294F23E2
+359.pygtex) [26]
+Overfull \hbox (26.22044pt too wide) in paragraph at lines 62--70
+\T1/qpl/m/n/12 jed-no-du-chou dis-tri-bú-ciou $\OML/cmm/m/it/12 Q\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 z\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 X; c\OT1/cmr/m/n/12 )$ 
+\T1/qpl/m/n/12 a sku-to£-nou $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 z\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 c\OT1/cmr/m/n/12 )$\T1/qpl/m/n/12 . Ma-x
+i-ma-li-zá-cia $\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 [[] \OML/cmm/m/it/12 P\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 X\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 z; c\OT1/cmr/m/n
+/12 )]$
+ []
+
+\openout7 = `thesis.pyg'.
+
+
+(./_minted-thesis/77D37579CDEDF525EEB7385EBC5E308E0102E502927AACB428B4F294F23E2
+359.pygtex [27])) [28] [29
 
 
 ]
 No file thesis.acr.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-[26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
+[30]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
  (./thesis.aux (./chapters/uvod.aux) (./chapters/formulacia.aux)
 (./chapters/analyza.aux) (./chapters/teoria.aux) (./chapters/tvorbaDatasetu.aux
-) (./chapters/farba.aux) (./chapters/gan.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
+) (./chapters/farba.aux) (./chapters/gan.aux) (./chapters/vae.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 033A8D9CF2918F5C4011F7D3A87A678A;3994.
+(rerunfilecheck)             Checksum: 5A80A279217D678816841EA7AF1609C8;4389.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1791,18 +1820,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26484 strings out of 492985
- 428939 string characters out of 6136283
- 997285 words of memory out of 5000000
- 29465 multiletter control sequences out of 15000+600000
- 49592 words of font info for 44 fonts, out of 8000000 for 9000
+ 26515 strings out of 492985
+ 429853 string characters out of 6136283
+ 1000465 words of memory out of 5000000
+ 29475 multiletter control sequences out of 15000+600000
+ 55819 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,12n,79p,2024b,1930s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}{c:/texlive/
-2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/texlive/2017/texm
-f-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2017/texmf-dist/fonts/enc
-/dvips/tex-gyre/q-ec.enc}{c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/c
-m-super-t1.enc}<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
+2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2017/texmf
+-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/texlive/2017/texmf-dist/fon
+ts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2017/texmf-dist/fonts/enc/dvips/tex
+-gyre/q-ec.enc}<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
 0.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2
 017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-
@@ -1812,11 +1841,12 @@ ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/tex-gyre/qplb.pf
 b><c:/texlive/2017/texmf-dist/fonts/type1/public/tex-gyre/qplr.pfb><c:/texlive/
 2017/texmf-dist/fonts/type1/public/tex-gyre/qplri.pfb><c:/texlive/2017/texmf-di
-st/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (37 pages, 428817 bytes).
+st/fonts/type1/public/cm-super/sfit1200.pfb><c:/texlive/2017/texmf-dist/fonts/t
+ype1/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (41 pages, 462279 bytes).
 PDF statistics:
- 461 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
- 229 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

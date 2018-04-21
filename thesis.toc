@@ -56,4 +56,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.5}Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}ovanie obr\IeC {\'a}zkov}{23}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literat\IeC {\'u}ra}{25}{section*.10}
+\contentsline {chapter}{\numberline {7}VAE Vizualiz\IeC {\'a}tor}{25}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}N\IeC {\'a}vrh}{25}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Implement\IeC {\'a}cia}{26}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literat\IeC {\'u}ra}{29}{section*.10}

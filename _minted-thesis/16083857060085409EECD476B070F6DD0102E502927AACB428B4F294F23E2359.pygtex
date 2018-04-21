@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{P}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{c}\PYG{p}{):}
+    \PYG{n}{inputs} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{values}\PYG{o}{=}\PYG{p}{[}\PYG{n}{z}\PYG{p}{,} \PYG{n}{c}\PYG{p}{])}
+    \PYG{n}{h} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{relu}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{matmul}\PYG{p}{(}\PYG{n}{inputs}\PYG{p}{,} \PYG{n}{P\PYGZus{}W1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{P\PYGZus{}b1}\PYG{p}{)}
+    \PYG{n}{logits} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{matmul}\PYG{p}{(}\PYG{n}{h}\PYG{p}{,} \PYG{n}{P\PYGZus{}W2}\PYG{p}{)} \PYG{o}{+} \PYG{n}{P\PYGZus{}b2}
+    \PYG{n}{prob} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{sigmoid}\PYG{p}{(}\PYG{n}{logits}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{prob}\PYG{p}{,} \PYG{n}{logits}
+
+\PYG{k}{def} \PYG{n+nf}{Q}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{c}\PYG{p}{):}
+    \PYG{n}{inputs} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{values}\PYG{o}{=}\PYG{p}{[}\PYG{n}{X}\PYG{p}{,} \PYG{n}{c}\PYG{p}{])}
+    \PYG{n}{h} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{relu}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{matmul}\PYG{p}{(}\PYG{n}{inputs}\PYG{p}{,} \PYG{n}{Q\PYGZus{}W1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{Q\PYGZus{}b1}\PYG{p}{)}
+    \PYG{n}{z\PYGZus{}mu} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{matmul}\PYG{p}{(}\PYG{n}{h}\PYG{p}{,} \PYG{n}{Q\PYGZus{}W2\PYGZus{}mu}\PYG{p}{)} \PYG{o}{+} \PYG{n}{Q\PYGZus{}b2\PYGZus{}mu}
+    \PYG{n}{z\PYGZus{}logvar} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{matmul}\PYG{p}{(}\PYG{n}{h}\PYG{p}{,} \PYG{n}{Q\PYGZus{}W2\PYGZus{}sigma}\PYG{p}{)} \PYG{o}{+} \PYG{n}{Q\PYGZus{}b2\PYGZus{}sigma}
+    \PYG{k}{return} \PYG{n}{z\PYGZus{}mu}\PYG{p}{,} \PYG{n}{z\PYGZus{}logvar}
+\end{Verbatim}
