@@ -5,15 +5,13 @@
 
 \PYG{c+c1}{\PYGZsh{} Sampling from random z}
 \PYG{n}{X\PYGZus{}samples}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=} \PYG{n}{P}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)}
-
 \PYG{c+c1}{\PYGZsh{} E[log P(X|z,c)]}
 \PYG{n}{recon\PYGZus{}loss} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}sum}\PYG{p}{(}
-		\PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{sigmoid\PYGZus{}cross\PYGZus{}entropy\PYGZus{}with\PYGZus{}logits}\PYG{p}{(}
-				\PYG{n}{logits}\PYG{o}{=}\PYG{n}{logits}\PYG{p}{,}
-				\PYG{n}{labels}\PYG{o}{=}\PYG{n}{X}\PYG{p}{),}
-		\PYG{l+m+mi}{1}\PYG{p}{)}
+	\PYG{n}{tf}\PYG{o}{.}\PYG{n}{nn}\PYG{o}{.}\PYG{n}{sigmoid\PYGZus{}cross\PYGZus{}entropy\PYGZus{}with\PYGZus{}logits}\PYG{p}{(}
+		\PYG{n}{logits}\PYG{o}{=}\PYG{n}{logits}\PYG{p}{,} \PYG{n}{labels}\PYG{o}{=}\PYG{n}{X}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{p}{)}
 \PYG{c+c1}{\PYGZsh{} D\PYGZus{}KL(Q(z|X,c) || P(z|c))}
-\PYG{n}{kl\PYGZus{}loss} \PYG{o}{=} \PYG{l+m+mf}{0.5} \PYG{o}{*} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}sum}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{z\PYGZus{}logvar}\PYG{p}{)} \PYG{o}{+} \PYG{n}{z\PYGZus{}mu}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1.} \PYG{o}{\PYGZhy{}} \PYG{n}{z\PYGZus{}logvar}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{kl\PYGZus{}loss} \PYG{o}{=} \PYG{l+m+mf}{0.5} \PYG{o}{*} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}sum}\PYG{p}{(}
+	\PYG{n}{tf}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{z\PYGZus{}logvar}\PYG{p}{)} \PYG{o}{+} \PYG{n}{z\PYGZus{}mu}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1.} \PYG{o}{\PYGZhy{}} \PYG{n}{z\PYGZus{}logvar}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
 
 \PYG{n}{vae\PYGZus{}loss} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{recon\PYGZus{}loss} \PYG{o}{+} \PYG{n}{kl\PYGZus{}loss}\PYG{p}{)}
 \PYG{n}{solver} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{train}\PYG{o}{.}\PYG{n}{AdamOptimizer}\PYG{p}{()}\PYG{o}{.}\PYG{n}{minimize}\PYG{p}{(}\PYG{n}{vae\PYGZus{}loss}\PYG{p}{)}
