@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{):}
+	\PYG{n}{D\PYGZus{}summary}\PYG{p}{,} \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{D\PYGZus{}loss\PYGZus{}curr}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=} \PYG{n}{sess}\PYG{o}{.}\PYG{n}{run}\PYG{p}{(}
+		\PYG{p}{[}\PYG{n}{D\PYGZus{}merge}\PYG{p}{,} \PYG{n}{D\PYGZus{}solver}\PYG{p}{,} \PYG{n}{D\PYGZus{}loss}\PYG{p}{,} \PYG{n}{clip\PYGZus{}D}\PYG{p}{],}
+		\PYG{n}{feed\PYGZus{}dict}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{X}\PYG{p}{:} \PYG{n}{X\PYGZus{}mb}\PYG{p}{,} \PYG{n}{Z}\PYG{p}{:} \PYG{n}{sample\PYGZus{}Z}\PYG{p}{(}\PYG{n}{mb\PYGZus{}size}\PYG{p}{,} \PYG{n}{z\PYGZus{}dim}\PYG{p}{),} \PYG{n}{y}\PYG{p}{:}\PYG{n}{y\PYGZus{}mb}\PYG{p}{\PYGZcb{}}
+	\PYG{p}{)}
+
+\PYG{n}{G\PYGZus{}summary}\PYG{p}{,} \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{G\PYGZus{}loss\PYGZus{}curr} \PYG{o}{=} \PYG{n}{sess}\PYG{o}{.}\PYG{n}{run}\PYG{p}{(}
+	\PYG{p}{[}\PYG{n}{G\PYGZus{}merge}\PYG{p}{,} \PYG{n}{G\PYGZus{}solver}\PYG{p}{,} \PYG{n}{G\PYGZus{}loss}\PYG{p}{],}
+	\PYG{n}{feed\PYGZus{}dict}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{Z}\PYG{p}{:} \PYG{n}{sample\PYGZus{}Z}\PYG{p}{(}\PYG{n}{mb\PYGZus{}size}\PYG{p}{,} \PYG{n}{z\PYGZus{}dim}\PYG{p}{),} \PYG{n}{y}\PYG{p}{:}\PYG{n}{y\PYGZus{}mb}\PYG{p}{\PYGZcb{}}
+\PYG{p}{)}
+\end{Verbatim}

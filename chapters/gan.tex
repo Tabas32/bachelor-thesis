@@ -122,8 +122,86 @@ Pravdepodobnosť, že náš navrhnutý model dokáže generovať obrázky v pož
 Bez optimalizovania boli výsledky nášho modelu hudobného vizualizátora, tak ako sme predpokladali, nedostačujúce.
 Na obrázku \ref{g_loss_1} sú zaznamenané tri trénovania, v rôznych časoch a trvaniach, na skicách z nášho datasetu.
 Je vidno že strata generátora po prvých dvoch trénovaniach klesla, no potom sa klesanie zastavilo dokonca trénovanie úplne zlyhalo a chyba začala rapídne divergovať.
+Náraz chyby spôsobil zmenu váh siete na neprípustné hodnoty, čo pri ďalšej epoche trénovania viedlo k nekonečným alebo neznámim hodnotám chýb obydvoch sietí.
+Tieto hodnoty tensorflow nedokáže spracovať a program trénovania spadol.
+Z toho dôvodu všetky naše ďalšie kroky smerovali k stablizácií trénovania.
 
-(Úprava parametrov......ešte nie je hotová)
+V prvom rade sme normalizovali vstupné dáta.
+Jednou časťou normalizácie je zmenšenie každej vzorky  o priemernú hodnotu vypočítanú zo vzoriek danej vlastnosti.
+Druhou časťou je min-max normalizácia, pri ktorej každú vlastnosť danej vzorky upravíme na hodnotu z intervalu \(<-0,5; 0,5>\).
+Trénovanie týchto dát bolo možné udržať dlhšie ale problém nebol úplne eliminovaný.
+
+S predpokladom, že problém tkvie v typológií siete, sme zmenili počet vrstiev.
+Nový generátor mal vstupnú vrstvu so 128 neurónmi, dve skryté vrstvy so 128 a 512 neurónmi a výstupnú vrstvu.
+Na výstupe sa aktivovala sigmoind funkcia všade inde relu.
+Diskriminátor ostal nezmenený, nakoľko sme predpokladali, že lepší generátor bude mať výhodu nad diskriminátorom, čo by viedlo k poklesu chyby.
+Táto zmena nepriniesla žiaden pozitívny výsledok.
+Je známim faktom, že aktivačná funkcia leaky relu má lepšie výsledky ako relu.
+Implementovali sme túto funkciu a využili v generátore.
+
+\begin{minted}{python}
+def lrelu(x, alpha):
+    return tf.nn.relu(x) - alpha * tf.nn.relu(-x)
+\end{minted}
+
+Nevedli sme si poradiť s výpadkami programu, tak sme pristúpili k riadenému trénovaniu sietí.
+Snahou bolo zabrániť chybe generátor presiahnúť vysokú hodnotu.
+Z toho dôvodu sme dovolili trénovať diskriminátor len v prípade, že chyba generátora je menšia ako 4.
+Daná úprava dovoľovala generátoru dobehnúť diskriminátor a program už nespadol.
+Výsledky trénovania však neboli pozitívne.
+
+Keď už sme mohli trénovať aj v dlhších časových úsekoch, začali sme viac experimentovať s parametrami siete.
+Zväčšili sme diskriminátor, zmenili aktivačné funkcie či upravili mieru trénovania v algoritme gradient descent.
+Nič z toho neprinieslo požadovaný úspech.
+
+Pri hľadaní riešenia na otázku stabilizovania GAN siete, sme narazili na iný prístup k výpočte chyby.
+Nový výpočet spočíval vo výpočte tzv. wasserstein distance.
+Upravili sme diskriminátor aby na výstupe nebola aktivačná funkcia.
+Zmenili sme výpočty chýb na:
+
+\begin{minted}{python}
+D_loss = tf.reduce_mean(D_real) - tf.reduce_mean(D_fake)
+G_loss = -tf.reduce_mean(D_fake)
+\end{minted}
+
+Použili sme menšiu mieru trénovania a nechali trénovať diskriminátor viac.
+\begin{minted}{python}
+for _ in range(5):
+	D_summary, _, D_loss_curr, _ = sess.run(
+		[D_merge, D_solver, D_loss, clip_D], 
+		feed_dict={X: X_mb, Z: sample_Z(mb_size, z_dim), y:y_mb}
+	)
+
+G_summary, _, G_loss_curr = sess.run(
+	[G_merge, G_solver, G_loss], 
+	feed_dict={Z: sample_Z(mb_size, z_dim), y:y_mb}
+)
+\end{minted}
+
+Táto zmena stabilizovala trénovanie.
+Program nespadol a nebolo nutné zasahovať manuálne do algoritmu.
+Pre porovanie sme vyskúšali dva optimalizátory, konkrétne AdamOptimizer a RMSPropOptimizer.
+
+\begin{figure}[!ht] 
+	\centering 
+	\includegraphics[width=.4\textwidth]{figures/adam_vs_rms} 
+	\caption{Chyba diskriminátora pri využití RMSPropOptimizer (hore) a AdamOptimizer (dole).}
+	\label{a_vs_r}
+\end{figure}
+
+Chyba diskriminátora konvergovala rýchlejšie ako je vidieť na obrázku \ref{a_vs_r}, tak sme sa rozhodli využívať pri ďalšom trénovaní už len tento optimalizátor.
+Opäť sme vyskúšali niekoľko typov siete.
+Najlepšie výsledky sme dosiahli pri Generátore, ktorý využíval Leaky ReLu aktivačné funkcie na skrytých vrstvách a Sigmoid funkciu na výstupe.
+Diskriminátor v tomto modely mal presne opačnú topológiu v porovnaní s generátorom a ako ativačné funkcie využíval ReLu.
+Táto GAN sieť dokázala generovať obrázky podobné nášmu datasetu, pri zadaní piesne z datasetu.
+Ak však na vstupe bola skladba, ktorú sieť pri trénovaní nemala, výstup bol bez kontextu.
+
+Tento problém sme sa snažili vyriešiť využitím iného datasetu, ktorý obsahoval menšie množstvo akustických vlastností pri jednotlivých vzorkách.
+Ani po veľmi dlhom trénovaní výsledky neboli pre nás dostatočné.
+Posledným krokom, ktorým sme sa snažili vylepšiť výsledok, bolo zakomponovanie konvolučných vrstiev do siete.
+Vytvorli sme generátor, ktorý pozostával z dvoch konvolučných vrstiev.
+Výsledky toho modelu naznačovali, že pre generovanie správnych obrázkov potrebujeme viac konvolúcií.
+Rozmery takej siete by, ale náš stroj nezniesol a tak sme od tohto riešenia ustúpili.
 
 \section{Zväčšovanie obrázkov}
 Hudobný vizualizátor popísaný v tejto kapitole je teoreticky schopný produkovať obrázky ľubovoľnej veľkosti.

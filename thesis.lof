@@ -22,8 +22,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Chyba gener\IeC {\'a}tora pri tr\IeC {\'e}novan\IeC {\'\i } neoptimalizovanej siete.\relax }}{22}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}enie obr\IeC {\'a}zku z datasetu vyu\IeC {\v z}it\IeC {\'\i }m CPPN siete.\relax }}{23}{figure.caption.9}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Chyba diskrimin\IeC {\'a}tora pri vyu\IeC {\v z}it\IeC {\'\i } RMSPropOptimizer (hore) a AdamOptimizer (dole).\relax }}{24}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}enie obr\IeC {\'a}zku z datasetu vyu\IeC {\v z}it\IeC {\'\i }m CPPN siete.\relax }}{25}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces V\IeC {\'y}stup varia\IeC {\v c}n\IeC {\'e}ho autoenk\IeC {\'o}dera pri Mozartovej skladbe Turkish March\relax }}{28}{figure.caption.10}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces V\IeC {\'y}stup varia\IeC {\v c}n\IeC {\'e}ho autoenk\IeC {\'o}dera pri Mozartovej skladbe Turkish March\relax }}{30}{figure.caption.11}

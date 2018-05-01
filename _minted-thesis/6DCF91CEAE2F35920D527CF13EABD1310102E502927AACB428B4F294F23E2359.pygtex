@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{D\PYGZus{}loss} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{D\PYGZus{}real}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{D\PYGZus{}fake}\PYG{p}{)}
+\PYG{n}{G\PYGZus{}loss} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{reduce\PYGZus{}mean}\PYG{p}{(}\PYG{n}{D\PYGZus{}fake}\PYG{p}{)}
+\end{Verbatim}

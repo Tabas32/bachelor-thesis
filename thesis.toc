@@ -52,14 +52,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.4}Zmena parametrov}{21}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}ovanie obr\IeC {\'a}zkov}{22}{section.5.5}
+\contentsline {section}{\numberline {5.5}Zv\IeC {\"a}\IeC {\v c}\IeC {\v s}ovanie obr\IeC {\'a}zkov}{24}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}VAE Vizualiz\IeC {\'a}tor}{24}{chapter.6}
+\contentsline {chapter}{\numberline {6}VAE Vizualiz\IeC {\'a}tor}{26}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}N\IeC {\'a}vrh}{24}{section.6.1}
+\contentsline {section}{\numberline {6.1}N\IeC {\'a}vrh}{26}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Implement\IeC {\'a}cia}{25}{section.6.2}
+\contentsline {section}{\numberline {6.2}Implement\IeC {\'a}cia}{27}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Tr\IeC {\'e}novanie}{27}{section.6.3}
+\contentsline {section}{\numberline {6.3}Tr\IeC {\'e}novanie}{29}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literat\IeC {\'u}ra}{30}{section*.11}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{32}{section*.12}
